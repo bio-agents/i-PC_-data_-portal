@@ -1,0 +1,120 @@
+.card-style {
+  background-color: #f9f9f9;
+  padding: 15px;
+  width: 100%;
+  border: 2px solid #CAD461 !important;
+
+  &:hover {
+    background-color: #a0ccccd3;
+    color: white;
+    border: 2px solid #75B9BE !important;
+  }
+  
+  &__content { 
+
+    &--title {
+      font-weight: font-weight(font-weight-thick);
+    }
+
+    &--para {
+      font-weight: font-weight(font-weight-regular);
+      padding-bottom: 10px;
+    }
+
+    &--btn {
+      text-align: center;
+    }
+
+    &--btn:link,
+    &--btn:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 8px 16px;
+      display: inline-block;
+      border-radius: 75px;
+      transition: all .2s;
+      position: absolute;
+      right: 20px;
+      bottom: 10px;
+      //overflow: hidden;
+    }
+
+    &--btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      color: white;
+    }
+
+    &--btn:active {
+      transform: translateY(-1px);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    &--btn-blue {
+      background-color: #75B9BE;
+      color: white;
+    }
+  
+    &--btn::after {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 75px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.8s;
+    }
+  
+    &--btn-blue::after {
+      background-color: #CAD461;
+    }
+  
+    &--btn:hover::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  
+    &--btn-animated {
+      animation: moveInBottom 0.5s ease-out;
+      animation-fill-mode: backwards;
+    }
+  }
+}
+  
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.card-cols {
+  display: flex;
+}
+
+
+.card{
+  border-radius: 4px;
+  transition: transform .5s cubic-bezier(.155,1.105,.295,1.12);
+  cursor: pointer;
+}
+
+.card:hover{
+  transform: scale(1.05);
+}
+
+.card-icon {
+  float: right;
+  width: 45px;
+}
+
+.card-search-style {
+  background: $color-primary !important;
+}

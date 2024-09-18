@@ -1,0 +1,115 @@
+// Base class
+.agenttip {
+  position: absolute;
+  z-index: $zindex-agenttip;
+  display: block;
+  margin: $agenttip-margin;
+  // Our parent element can be arbitrary since agenttips are by default inserted as a sibling of their target element.
+  // So reset our font and text properties to avoid inheriting weird values.
+  @include reset-text();
+  @include font-size($agenttip-font-size);
+  // Allow breaking very long words so they don't overflow the agenttip's bounds
+  word-wrap: break-word;
+  opacity: 0;
+
+  &.show { opacity: $agenttip-opacity; }
+
+  .arrow {
+    position: absolute;
+    display: block;
+    width: $agenttip-arrow-width;
+    height: $agenttip-arrow-height;
+
+    &::before {
+      position: absolute;
+      content: "";
+      border-color: transparent;
+      border-style: solid;
+    }
+  }
+}
+
+.bs-agenttip-top {
+  padding: $agenttip-arrow-height 0;
+
+  .arrow {
+    bottom: 0;
+
+    &::before {
+      top: 0;
+      border-width: $agenttip-arrow-height ($agenttip-arrow-width / 2) 0;
+      border-top-color: $agenttip-arrow-color;
+    }
+  }
+}
+
+.bs-agenttip-right {
+  padding: 0 $agenttip-arrow-height;
+
+  .arrow {
+    left: 0;
+    width: $agenttip-arrow-height;
+    height: $agenttip-arrow-width;
+
+    &::before {
+      right: 0;
+      border-width: ($agenttip-arrow-width / 2) $agenttip-arrow-height ($agenttip-arrow-width / 2) 0;
+      border-right-color: $agenttip-arrow-color;
+    }
+  }
+}
+
+.bs-agenttip-bottom {
+  padding: $agenttip-arrow-height 0;
+
+  .arrow {
+    top: 0;
+
+    &::before {
+      bottom: 0;
+      border-width: 0 ($agenttip-arrow-width / 2) $agenttip-arrow-height;
+      border-bottom-color: $agenttip-arrow-color;
+    }
+  }
+}
+
+.bs-agenttip-left {
+  padding: 0 $agenttip-arrow-height;
+
+  .arrow {
+    right: 0;
+    width: $agenttip-arrow-height;
+    height: $agenttip-arrow-width;
+
+    &::before {
+      left: 0;
+      border-width: ($agenttip-arrow-width / 2) 0 ($agenttip-arrow-width / 2) $agenttip-arrow-height;
+      border-left-color: $agenttip-arrow-color;
+    }
+  }
+}
+
+.bs-agenttip-auto {
+  &[x-placement^="top"] {
+    @extend .bs-agenttip-top;
+  }
+  &[x-placement^="right"] {
+    @extend .bs-agenttip-right;
+  }
+  &[x-placement^="bottom"] {
+    @extend .bs-agenttip-bottom;
+  }
+  &[x-placement^="left"] {
+    @extend .bs-agenttip-left;
+  }
+}
+
+// Wrapper for the agenttip content
+.agenttip-inner {
+  max-width: $agenttip-max-width;
+  padding: $agenttip-padding-y $agenttip-padding-x;
+  color: $agenttip-color;
+  text-align: center;
+  background-color: $agenttip-bg;
+  @include border-radius($agenttip-border-radius);
+}
