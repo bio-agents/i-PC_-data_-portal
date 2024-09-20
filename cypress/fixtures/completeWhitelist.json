@@ -1,22 +1,3 @@
-[
-    {
-    "access": "public",
-    "es_index": "permissions_test",
-    "file_ID": "TF000",
-    "file_external_ID": "DEMO_LOCATOR_TF000",
-    "file_format": "csv",
-    "file_size": 1000,
-    "id": "3WvlE3kBEdNf6kpiXpP5",
-    "title": "Test_file_000"
-    },
-    {
-    "access": "private",
-    "es_index": "permissions_test",
-    "file_ID": "TF001",
-    "file_external_ID": "DEMO_LOCATOR_TF001",
-    "file_format": "csv",
-    "file_size": 1000,
-    "id": "5NvlE3kBEdNf6kpiHHDD2",
-    "title": "Test_file_001"
-    }
-]
+version https://git-lfs.github.com/spec/v1
+oid sha256:0b6b9b311020c97d4cc31e661b2ccacb6d2a9f97897265d90b95e2db51b7af1b
+size 514

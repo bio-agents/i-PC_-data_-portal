@@ -1,12 +1,3 @@
-[
-    {
-        "access": "private",
-        "es_index": "permissions_test",
-        "file_ID": "TF099",
-        "file_external_ID": "DEMO_LOCATOR_TF099",
-        "file_format": "csv",
-        "file_size": 5000,
-        "id": "3WvlE3kBEdNf6kpinNj8",
-        "title": "Test file 099"
-    }
-]
+version https://git-lfs.github.com/spec/v1
+oid sha256:fba299b41b1819ea910c53185649dd61a4a89c35840ccbb70182e60e299e22f1
+size 290
